@@ -685,8 +685,8 @@ public class ContactsServicePlugin implements MethodCallHandler, FlutterPlugin, 
                                                 final boolean photoHighResolution, final ContentResolver contentResolver) {
     try {
       final Uri uri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, Long.parseLong(identifier));
+      if (uri == null) return null;
       final InputStream input = ContactsContract.Contacts.openContactPhotoInputStream(contentResolver, uri, photoHighResolution);
-
       if (input == null) return null;
 
       final Bitmap bitmap = BitmapFactory.decodeStream(input);

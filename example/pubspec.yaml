@@ -15,7 +15,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  permission_handler: ^6.1.1
+  permission_handler: ^9.2.0
   contacts_service:
     path: ../
 
